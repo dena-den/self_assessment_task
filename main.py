@@ -1,4 +1,4 @@
-"""Calucations supposed to be done here"""
+"""Calculations supposed to be done here"""
 
 import requests
 import pandas as pd
