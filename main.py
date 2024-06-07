@@ -72,11 +72,11 @@ if __name__ == "__main__":
     # For how many rows final price in expected data matches with calculated price from actual data?
     key = "final_price"
     matched = len(
-        # A trick here - we should round actual by digits amount of expected to match the expected
         [
             1
             for actual in calculated_prices
             for exp in expected
+            # A trick here - we should round actual by digits amount of expected to match the expected
             if round(actual[key], len(str(exp[key]).split(".")[1])) == exp[key]
         ]
     )
