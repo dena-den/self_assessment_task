@@ -62,10 +62,12 @@ if __name__ == "__main__":
     # What product is the most expensive according to actual data?
     most_expensive = max(calculated_prices, key=lambda x: x["final_price"])
     print(f"What product is the most expensive according to actual data? {most_expensive}")
+    print("="*40)
 
     # What product is missing in expected data?
     missed = get_products_missed_in_expected_data(actual["products"], expected)
     print(f"What product is missing in expected data? {missed}")
+    print("="*40)
 
     # For how many rows final price in expected data matches with calculated price from actual data?
     key = "final_price"
