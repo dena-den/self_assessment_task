@@ -26,7 +26,6 @@ def get_expected_data():
 def get_calculated_price(products):
     """Get the calculated price
     Args:
-
         products (list): List of products from the API
     """
     return [
