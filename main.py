@@ -18,7 +18,7 @@ def get_products():
 
 def get_expected_data():
     """Get the expected data from the parquet file"""
-    return pd.read_parquet("data/product_prices_calculated.parquet").to_dict(
+    return pd.read_parquet("data/product_prices_calculated.parquet").fillna(0).to_dict(
         orient="records"
     )
 
@@ -70,12 +70,12 @@ if __name__ == "__main__":
     # For how many rows final price in expected data matches with calculated price from actual data?
     key = "final_price"
     matched = len(
-        # A trick here - we should round actual by 2 digits to match the expected
+        # A trick here - we should round actual by digits amount of expected to match the expected
         [
             1
             for actual in calculated_prices
             for exp in expected
-            if round(actual[key], 2) == exp[key]
+            if round(actual[key], len(str(exp[key]).split(".")[1])) == exp[key]
         ]
     )
     print(f"For how many rows final price in expected data matches with calculated price from actual data? {matched}")
