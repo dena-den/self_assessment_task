@@ -28,3 +28,25 @@ It should be easy to read, effective and explicit.
 
 
 If you have questions, feel free to reach out - dbulychev@jaxel.com
+
+# Steps to Run the Assessment Task
+
+## Create Virtual Environment
+```sh
+virtualenv -p python3.12 venv
+```
+
+## Activate Virtual Environment
+```sh
+source venv/bin/activate
+```
+
+## Install python dependancies
+```sh
+pip install -r requirements.txt
+```
+
+## Run python script and get the results
+```sh
+python main.py
+```
